@@ -32,6 +32,6 @@ public class UserDetailServiceImpl implements UserDetailsService {
             List<GrantedAuthority> list = AuthorityUtils.commaSeparatedStringToAuthorityList("admin");
             return new User(users.getUsername(), new BCryptPasswordEncoder().encode(users.getPassword()), list);
         }
-
     }
+
 }

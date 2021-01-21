@@ -8,15 +8,18 @@ import org.springframework.web.bind.annotation.RestController;
 @MapperScan("com.example.demo.mapper")
 @SpringBootApplication
 @RestController
-public class
-DemoApplication {
+public class DemoApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-    @RequestMapping
+    @RequestMapping("/test/hello")
     public String hello() {
         return "hello";
+    }
+    @RequestMapping("/test/index")
+    public String index() {
+        return "index";
     }
 }
