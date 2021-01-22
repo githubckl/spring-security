@@ -29,7 +29,8 @@ public class UserDetailServiceImpl implements UserDetailsService {
         if (users == null) {
             throw new UsernameNotFoundException("用户名不存在");
         } else {
-            List<GrantedAuthority> list = AuthorityUtils.commaSeparatedStringToAuthorityList("admin");
+            List<GrantedAuthority> list = AuthorityUtils
+                    .commaSeparatedStringToAuthorityList("ROLE_admin");
             return new User(users.getUsername(), new BCryptPasswordEncoder().encode(users.getPassword()), list);
         }
     }
